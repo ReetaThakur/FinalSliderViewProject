@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbarSize="1dp"
+        android:transitionName="horizontalView"
+        android:id="@+id/horizontalView"
         android:scrollbars="horizontal"
         android:orientation="horizontal">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,19 +20,21 @@
             android:background="@color/black"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_width="87dp"
+                android:layout_height="87dp"
                 android:src="@drawable/pinkcircle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="14dp"/>
-            <ImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circle1"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:transitionName="circle1"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/whitecircle"
+                android:src="@drawable/heart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <TextView
@@ -40,8 +44,9 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="15dp"
+                android:transitionName="recommended"
                 android:id="@+id/recommmended"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginStart="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/circle1"/>
@@ -51,6 +56,7 @@
                 android:layout_height="80dp"
                 android:src="@drawable/boy3"
                 app:civ_border_width="2dp"
+                android:transitionName="circle2"
                 app:civ_border_color="@color/white"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
@@ -60,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Match %"
+                android:transitionName="match%"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="15dp"
@@ -74,6 +81,7 @@
                 app:civ_border_color="@color/white"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:transitionName="circle3"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/girl1"
@@ -84,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:text="Vaccinated"
                 android:textSize="15dp"
+                android:transitionName="vaccination"
                 android:id="@+id/vaccinate"
                 android:textStyle="bold"
                 android:textColor="@color/white"
@@ -96,6 +105,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="30dp"
+                android:transitionName="circle4"
                 android:layout_marginTop="5dp"
                 app:civ_border_width="2dp"
                 app:civ_border_color="@color/white"
@@ -107,6 +117,7 @@
                 android:layout_height="wrap_content"
                 android:text="Passport"
                 android:id="@+id/passport"
+                android:transitionName="passport"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="15dp"
@@ -116,6 +127,7 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circle5"
                 android:layout_width="80dp"
+                android:transitionName="circle5"
                 android:layout_height="80dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
@@ -132,6 +144,7 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="15dp"
+                android:transitionName="newPeople"
                 app:layout_constraintStart_toEndOf="@+id/passport"
                 app:layout_constraintTop_toBottomOf="@+id/circle5"
                 android:layout_marginStart="40dp"/>
@@ -139,6 +152,7 @@
                 android:id="@+id/circle6"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:transitionName="circle6"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
                 app:civ_border_width="2dp"
@@ -153,6 +167,7 @@
                 android:id="@+id/online"
                 android:textColor="@color/white"
                 android:textStyle="bold"
+                android:transitionName="online"
                 android:textSize="15dp"
                 app:layout_constraintStart_toEndOf="@+id/newpeople"
                 app:layout_constraintTop_toBottomOf="@+id/circle6"
@@ -163,6 +178,7 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
+                android:transitionName="circle7"
                 app:civ_border_width="2dp"
                 app:civ_border_color="@color/white"
                 android:src="@drawable/girls2"
@@ -172,6 +188,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Popular"
+                android:transitionName="popular"
                 android:textColor="@color/white"
                 android:id="@+id/popular"
                 android:textStyle="bold"
@@ -183,6 +200,7 @@
                 android:id="@+id/circle8"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:transitionName="circle8"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
                 app:civ_border_width="2dp"
@@ -194,6 +212,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nearby"
+                android:transitionName="nearby"
                 android:id="@+id/nearby"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -211,23 +230,150 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recommended Just For You"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="25dp"/>
+
     <com.yuyakaido.android.cardstackview.CardStackView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:id="@+id/card_stack_view"
         android:padding="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:clipToPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:id="@+id/blackView"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="13dp"
+            android:src="@drawable/dis"
+            android:id="@+id/discovers"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discover"
+            android:id="@+id/disco"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discovers" />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/he"
+            android:id="@+id/heart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/discovers"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Likes"
+            android:id="@+id/likes"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/disco"
+            app:layout_constraintTop_toBottomOf="@+id/heart"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_message_24"
+            android:id="@+id/msg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/heart"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Messages"
+            android:id="@+id/message"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/likes"
+            app:layout_constraintTop_toBottomOf="@+id/msg"/>
+
+        <ImageView
+            android:id="@+id/preference"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/msg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferences"
+            android:id="@+id/prefer"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/message"
+            app:layout_constraintTop_toBottomOf="@+id/heart"/>
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/pro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/preference" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:id="@+id/pro"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/prefer"
+            app:layout_constraintTop_toBottomOf="@+id/profile"/>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

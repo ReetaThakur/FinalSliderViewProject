@@ -3,9 +3,11 @@ package com.example.practiceview;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
@@ -20,11 +22,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private CardStackLayoutManager manager;
     private CardStackAdapter adapter;
+    private ImageView viv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        viv=findViewById(R.id.circle2);
         CardStackView cardStackView=findViewById(R.id.card_stack_view);
         manager=new CardStackLayoutManager(this, new CardStackListener() {
             @Override
@@ -71,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
         cardStackView.setLayoutManager(manager);
         cardStackView.setAdapter(adapter);
         cardStackView.setItemAnimator(new DefaultItemAnimator());
+        viv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,MainActivity2.class);
+                startActivity(intent);
+
+            }
+        });
 
 
     }
@@ -82,10 +94,8 @@ public class MainActivity extends AppCompatActivity {
             itemModelList.add(new ItemModel(R.drawable.boy4, "Vivia", 32));
             itemModelList.add(new ItemModel(R.drawable.girl1, "Vivia", 23));
             itemModelList.add(new ItemModel(R.drawable.girl1, "Vivia", 43));
-            itemModelList.add(new ItemModel(R.drawable.boy2, "Shiv", 43));
+            itemModelList.add(new ItemModel(R.drawable.prabhakar, "Shiv", 43));
         }
         return itemModelList;
-
-
     }
 }
